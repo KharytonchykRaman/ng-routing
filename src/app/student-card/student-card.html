@@ -1,0 +1,53 @@
+<div class="profile-card">
+    <!-- Верхняя часть: Фото и ФИО -->
+    <div class="header">
+      <div class="avatar">
+        <img [src]="{{user.imgSrc}}" alt="Avatar">
+      </div>
+      <div class="info-main">
+        <div class="fio-label">ФИО</div>
+        <div class="name">{{ user.fullName }}</div>
+        <div class="group-info">Group: <span class="group-tag">{{ user.group }}</span></div>
+      </div>
+    </div>
+  
+    <!-- Статистика (алмазы, монеты и т.д.) -->
+    <div class="stats-row">
+      <span class="stat-item"><i class="icon-diamond"></i> {{ user.diamonds }}</span>
+      <span class="stat-item"><i class="icon-coin"></i> {{ user.coins }}</span>
+      <span class="stat-item"><i class="icon-msg"></i> {{ user.messages }}</span>
+      <span class="stat-item"><i class="icon-award"></i> {{ user.achievements }}</span>
+    </div>
+  
+    <!-- Оценки и Посещаемость -->
+    <div class="metrics">
+      <div class="metric-row">
+        <span class="badge green">{{ user.avgGrade }}</span>
+        <span class="label">Average Grade</span>
+      </div>
+      <div class="metric-row">
+        <span class="badge blue">{{ user.visitPercent }}</span>
+        <span class="label">Visit, %</span>
+      </div>
+    </div>
+  
+    <!-- Контактная информация -->
+    <div class="details">
+      <div class="detail-item">
+        <i class="icon-age"></i> Age: {{ user.age }} years
+      </div>
+      <div class="detail-item">
+        <i class="icon-mail"></i> {{ user.email }}
+      </div>
+      <div class="detail-item">
+        <i class="icon-phone"></i> {{ user.phone }}
+      </div>
+      <div class="detail-item">
+        <i class="icon-login"></i> {{ user.login }}
+      </div>
+    </div>
+  
+    <div class="footer">
+      Last seen in MyStat: {{ user.lastSeen }}
+    </div>
+  </div>

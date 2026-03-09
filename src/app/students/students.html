@@ -1,1 +1,6 @@
-<p>students works!</p>
+<div class="users-container" style="display: flex; flex-wrap: wrap; gap: 20px;">
+    @for(let userData of users; track $index){
+    <app-profile-card [user]="userData">
+    </app-profile-card>
+    }
+</div>
