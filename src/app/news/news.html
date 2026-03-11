@@ -1,1 +1,24 @@
-<p>news works!</p>
+<div class="container">
+  <div class="form-container">
+    <input type="text" [(ngModel)]="newTitle" placeholder="Заголовок новости" />
+    <input type="text" [(ngModel)]="newAuthor" placeholder="Имя автора" />
+    <button (click)="addNews()">Добавить новость</button>
+  </div>
+
+  <div class="news-list">
+    @for (item of newsList; track $index) {
+      <div class="news-card">
+        <h3 class="news-title">{{ item.title }}</h3>
+
+        <div class="news-meta">
+          <span class="author"> <i class="icon-user">👤</i> {{ item.author }} </span>
+
+          <div class="datetime">
+            <span class="date"> <i class="icon-calendar">📅</i> {{ item.date }} </span>
+            <span class="time"> <i class="icon-clock">🕒</i> {{ item.time }} </span>
+          </div>
+        </div>
+      </div>
+    }
+  </div>
+</div>

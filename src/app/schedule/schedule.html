@@ -1,1 +1,25 @@
-<p>schedule works!</p>
+<div class="schedule-container">
+  <h1 class="main-title">CLASS SCHEDULE</h1>
+
+  <div class="grid-wrapper">
+    <div class="grid-header">
+      <div class="cell corner-cell"></div>
+      @for (day of days; track $index) {
+        <div class="cell day-cell" [ngClass]="day.toLowerCase()">
+          {{ day }}
+        </div>
+      }
+    </div>
+
+    @for (time of timeSlots; track $index) {
+      <div class="grid-row">
+        <div class="cell time-cell">{{ time }}</div>
+        @for (day of days; track $index) {
+          <div class="cell content-cell">
+            {{ scheduleGrid[day + '-' + time] }}
+          </div>
+        }
+      </div>
+    }
+  </div>
+</div>

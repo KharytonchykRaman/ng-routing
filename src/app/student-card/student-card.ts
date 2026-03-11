@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
+import { Student } from '../students/students';
 
 @Component({
   selector: 'app-student-card',
@@ -7,5 +8,5 @@ import { Component } from '@angular/core';
   styleUrl: './student-card.css',
 })
 export class StudentCard {
-
+  @Input({ required: true }) student!: Student;
 }

@@ -1,6 +1,5 @@
-<div class="users-container" style="display: flex; flex-wrap: wrap; gap: 20px;">
-    @for(let userData of users; track $index){
-    <app-profile-card [user]="userData">
-    </app-profile-card>
-    }
+<div class="users-container" style="display: flex; flex-wrap: wrap; gap: 20px">
+  @for (student of students; track $index) {
+    <app-student-card [student]="student"> </app-student-card>
+  }
 </div>
